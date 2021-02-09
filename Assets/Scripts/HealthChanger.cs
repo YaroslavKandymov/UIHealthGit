@@ -7,14 +7,16 @@ using DG.Tweening;
 public class HealthChanger : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
+    [SerializeField] private int _healthQuantity;
+    [SerializeField] private float _duration;
 
     public void Heal()
     {
-        _slider.DOValue(_slider.value + 10, 0.5f).SetEase(Ease.Linear);
+        _slider.DOValue(_slider.value + _healthQuantity, _duration).SetEase(Ease.Linear);
     }
 
     public void Damage()
     {
-        _slider.DOValue(_slider.value - 10, 0.5f).SetEase(Ease.Linear);
+        _slider.DOValue(_slider.value - _healthQuantity, _duration).SetEase(Ease.Linear);
     }
 }
